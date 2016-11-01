@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+             version="2.0">
+    <persistence-unit name="TrainingTask"
+                      transaction-type="RESOURCE_LOCAL">
+        <class>com.haulmont.trainingtask.entity.City</class>
+        <class>com.haulmont.trainingtask.entity.Employee</class>
+        <class>com.haulmont.trainingtask.entity.Customer</class>
+        <class>com.haulmont.trainingtask.entity.Repair</class>
+        <class>com.haulmont.trainingtask.entity.Individual</class>
+        <class>com.haulmont.trainingtask.entity.Company</class>
+        <class>com.haulmont.trainingtask.entity.CarServiceCenter</class>
+    </persistence-unit>
+</persistence>

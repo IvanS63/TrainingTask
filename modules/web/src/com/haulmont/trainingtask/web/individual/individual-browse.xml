@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="com.haulmont.trainingtask.web.individual.IndividualBrowse"
+        focusComponent="individualsTable"
+        lookupComponent="individualsTable"
+        messagesPack="com.haulmont.trainingtask.web.individual">
+    <dsContext>
+        <collectionDatasource id="individualsDs"
+                              class="com.haulmont.trainingtask.entity.Individual"
+                              view="_local">
+            <query>
+                <![CDATA[select e from trainingtask$Individual e]]>
+            </query>
+        </collectionDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout spacing="true">
+        <table id="individualsTable"
+               height="100%"
+               width="100%">
+            <actions>
+                <action id="create"/>
+                <action id="edit"/>
+                <action id="remove"/>
+            </actions>
+            <columns>
+                <column id="name"/>
+                <column id="phone"/>
+                <column id="email"/>
+                <column id="passportNo"/>
+            </columns>
+            <rows datasource="individualsDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn"
+                        action="individualsTable.create"/>
+                <button id="editBtn"
+                        action="individualsTable.edit"/>
+                <button id="removeBtn"
+                        action="individualsTable.remove"/>
+            </buttonsPanel>
+        </table>
+    </layout>
+</window>

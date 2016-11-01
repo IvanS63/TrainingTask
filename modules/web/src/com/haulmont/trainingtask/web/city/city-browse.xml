@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="com.haulmont.trainingtask.web.city.CityBrowse"
+        focusComponent="citiesTable"
+        lookupComponent="citiesTable"
+        messagesPack="com.haulmont.trainingtask.web.city">
+    <dsContext>
+        <collectionDatasource id="citiesDs"
+                              class="com.haulmont.trainingtask.entity.City"
+                              view="_local">
+            <query>
+                <![CDATA[select e from trainingtask$City e]]>
+            </query>
+        </collectionDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout spacing="true">
+        <table id="citiesTable"
+               height="100%"
+               width="100%">
+            <actions>
+                <action id="create"/>
+                <action id="edit"/>
+                <action id="remove"/>
+            </actions>
+            <columns>
+                <column id="name"/>
+                <column id="code"/>
+                <column id="defaultCity"/>
+            </columns>
+            <rows datasource="citiesDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn"
+                        action="citiesTable.create"/>
+                <button id="editBtn"
+                        action="citiesTable.edit"/>
+                <button id="removeBtn"
+                        action="citiesTable.remove"/>
+            </buttonsPanel>
+        </table>
+    </layout>
+</window>

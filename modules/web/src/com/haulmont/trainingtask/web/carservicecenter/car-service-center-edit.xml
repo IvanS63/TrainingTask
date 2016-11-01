@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://customerType"
+        class="com.haulmont.trainingtask.web.carservicecenter.CarServiceCenterEdit"
+        datasource="carServiceCenterDs"
+        focusComponent="fieldGroup"
+        messagesPack="com.haulmont.trainingtask.web.carservicecenter">
+    <dsContext>
+        <datasource id="carServiceCenterDs"
+                    class="com.haulmont.trainingtask.entity.CarServiceCenter"
+                    view="carServiceCenterWithCity-view">
+            <collectionDatasource id="repairDs"
+                                  property="repair"/>
+            <collectionDatasource id="customersDs"
+                                  property="customers"/>
+        </datasource>
+        <collectionDatasource id="employeesDs"
+                              class="com.haulmont.trainingtask.entity.Employee">
+            <query>
+                <![CDATA[select e from trainingtask$Employee e
+where e.center.id=:ds$carServiceCenterDs]]>
+            </query>
+        </collectionDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="windowActions"
+            spacing="true">
+        <fieldGroup id="fieldGroup"
+                    datasource="carServiceCenterDs">
+            <column width="250px">
+                <field id="name"/>
+                <field id="phone"/>
+                <field id="address"/>
+                <field id="city"/>
+            </column>
+        </fieldGroup>
+        <tabSheet id="tabSheet">
+            <tab id="employeesTab"
+                 caption="msg://employeesTab">
+                <table id="employeesTable"
+                       height="100px"
+                       width="100%">
+                    <columns>
+                        <column id="firstName"/>
+                        <column id="lastName"/>
+                        <column id="birthDate"/>
+                        <column id="email"/>
+                        <column id="salary"/>
+                    </columns>
+                    <rows datasource="employeesDs"/>
+                </table>
+            </tab>
+            <tab id="repairsTab"
+                 caption="msg://repairsTab">
+                <table id="repairTable"
+                       height="200px"
+                       width="100%">
+                    <actions>
+                        <action id="create"/>
+                        <action id="edit"/>
+                        <action id="remove"/>
+                    </actions>
+                    <columns>
+                        <column id="description"/>
+                    </columns>
+                    <rows datasource="repairDs"/>
+                    <buttonsPanel>
+                        <button action="repairTable.create"/>
+                        <button action="repairTable.edit"/>
+                        <button action="repairTable.remove"/>
+                    </buttonsPanel>
+                </table>
+            </tab>
+            <tab id="customersTab"
+                 caption="msg://customersTab">
+                <table id="customersTable"
+                       height="200px"
+                       width="100%">
+                    <actions>
+                        <action id="add"/>
+                        <action id="remove"/>
+                    </actions>
+                    <columns>
+                        <column id="name"/>
+                        <column id="phone"/>
+                        <column id="email"/>
+                    </columns>
+                    <rows datasource="customersDs"/>
+                    <buttonsPanel>
+                        <button action="customersTable.add"/>
+                        <button action="customersTable.remove"/>
+                    </buttonsPanel>
+                </table>
+            </tab>
+        </tabSheet>
+        <frame id="windowActions"
+               screen="editWindowActions"/>
+    </layout>
+</window>

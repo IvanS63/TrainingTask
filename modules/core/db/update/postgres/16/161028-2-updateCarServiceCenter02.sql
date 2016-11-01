@@ -1,0 +1,4 @@
+-- alter table TRAININGTASK_CAR_SERVICE_CENTER add column CREATED_BY_USER_ID uuid ^
+-- update TRAININGTASK_CAR_SERVICE_CENTER set CREATED_BY_USER_ID = <default_value> ;
+-- alter table TRAININGTASK_CAR_SERVICE_CENTER alter column CREATED_BY_USER_ID set not null ;
+alter table TRAININGTASK_CAR_SERVICE_CENTER add column CREATED_BY_USER_ID uuid;

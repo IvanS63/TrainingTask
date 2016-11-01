@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://editCaption"
+        class="com.haulmont.trainingtask.web.city.CityEdit"
+        datasource="cityDs"
+        focusComponent="fieldGroup"
+        messagesPack="com.haulmont.trainingtask.web.city">
+    <dsContext>
+        <datasource id="cityDs"
+                    class="com.haulmont.trainingtask.entity.City"
+                    view="_local"/>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="windowActions"
+            spacing="true">
+        <fieldGroup id="fieldGroup"
+                    datasource="cityDs">
+            <column width="250px">
+                <field id="name"/>
+                <field id="code"/>
+                <field id="defaultCity"/>
+            </column>
+        </fieldGroup>
+        <frame id="windowActions"
+               screen="editWindowActions"/>
+    </layout>
+</window>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<screen-config xmlns="http://schemas.haulmont.com/cuba/screens.xsd">
+    <include file="com/haulmont/trainingtask/screens.xml"/>
+    <screen id="trainingtask$Repair.edit"
+            template="com/haulmont/trainingtask/web/repair/repair-edit.xml"/>
+    <screen id="trainingtask$Employee.edit"
+            template="com/haulmont/trainingtask/web/employee/employee-edit.xml"/>
+    <screen id="trainingtask$CarServiceCenter.edit"
+            template="com/haulmont/trainingtask/web/carservicecenter/car-service-center-edit.xml"/>
+    <screen id="trainingtask$CarServiceCenter.browse"
+            template="com/haulmont/trainingtask/web/carservicecenter/car-service-center-browse.xml"/>
+    <screen id="trainingtask$Company.edit"
+            template="com/haulmont/trainingtask/web/company/company-edit.xml"/>
+    <screen id="trainingtask$Company.browse"
+            template="com/haulmont/trainingtask/web/company/company-browse.xml"/>
+    <screen id="trainingtask$Customer.browse"
+            template="com/haulmont/trainingtask/web/customer/customer-browse.xml"/>
+    <screen id="trainingtask$Individual.browse"
+            template="com/haulmont/trainingtask/web/individual/individual-browse.xml"/>
+    <screen id="trainingtask$Individual.edit"
+            template="com/haulmont/trainingtask/web/individual/individual-edit.xml"/>
+    <screen id="trainingtask$Employee.browse"
+            template="com/haulmont/trainingtask/web/employee/employee-browse.xml"/>
+    <screen id="trainingtask$City.edit"
+            template="com/haulmont/trainingtask/web/city/city-edit.xml"/>
+    <screen id="trainingtask$City.browse"
+            template="com/haulmont/trainingtask/web/city/city-browse.xml"/>
+    <screen id="loginWindow"
+            template="com/haulmont/trainingtask/web/loginwindow/ext-loginwindow.xml"/>
+</screen-config>

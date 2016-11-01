@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="com.haulmont.trainingtask.web.carservicecenter.CarServiceCenterBrowse"
+        focusComponent="carServiceCentersTable"
+        lookupComponent="carServiceCentersTable"
+        messagesPack="com.haulmont.trainingtask.web.carservicecenter">
+    <dsContext>
+        <groupDatasource id="carServiceCentersDs"
+                         class="com.haulmont.trainingtask.entity.CarServiceCenter"
+                         view="carServiceCenterWithCity-view">
+            <query>
+                <![CDATA[select e from trainingtask$CarServiceCenter e]]>
+            </query>
+        </groupDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="carServiceCentersTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="carServiceCentersTable"
+                datasource="carServiceCentersDs">
+            <custom caption="msg://employeesCondition"
+                    join="join {E}.employees emp"
+                    name="employeeCondition"
+                    paramClass="java.lang.String">emp.lastName like ?</custom>
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="carServiceCentersTable"
+                    width="100%">
+            <actions>
+                <action id="create"/>
+                <action id="edit"/>
+                <action id="remove"/>
+            </actions>
+            <columns>
+                <group>
+                    <column id="city.name"/>
+                </group>
+                <column id="name"/>
+                <column id="phone"/>
+                <column id="address"/>
+            </columns>
+            <rows datasource="carServiceCentersDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn"
+                        action="carServiceCentersTable.create"/>
+                <button id="editBtn"
+                        action="carServiceCentersTable.edit"/>
+                <button id="removeBtn"
+                        action="carServiceCentersTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+    </layout>
+</window>

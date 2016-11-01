@@ -1,0 +1,1 @@
+--create unique index IDX_TRAININGTASK_CITY_UK_NAME on TRAININGTASK_CITY (NAME) where DELETE_TS is null ;
