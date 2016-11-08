@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
         caption="msg://browseCaption"
-        class="com.haulmont.trainingtask.web.customer.CustomerBrowse"
+        class="com.haulmont.cuba.gui.components.AbstractLookup"
         focusComponent="customersTable"
         lookupComponent="customersTable"
         messagesPack="com.haulmont.trainingtask.web.customer">

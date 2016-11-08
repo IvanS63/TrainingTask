@@ -30,6 +30,7 @@ public class RepairEdit extends AbstractEditor<Repair> {
 
     @Override
     public void init(Map<String, Object> params) {
+        super.init(params);
         clearDefaultValues();
         initEmployeesSelectParams();
     }
@@ -81,5 +82,6 @@ public class RepairEdit extends AbstractEditor<Repair> {
                         .setParameter("value", center.getId()));
         return dataManager.loadList(loadContext);
     }
+
 
 }

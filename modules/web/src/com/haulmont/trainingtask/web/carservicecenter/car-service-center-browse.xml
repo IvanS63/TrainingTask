@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
         caption="msg://browseCaption"
-        class="com.haulmont.trainingtask.web.carservicecenter.CarServiceCenterBrowse"
+        class="com.haulmont.cuba.gui.components.AbstractLookup"
         focusComponent="carServiceCentersTable"
         lookupComponent="carServiceCentersTable"
         messagesPack="com.haulmont.trainingtask.web.carservicecenter">

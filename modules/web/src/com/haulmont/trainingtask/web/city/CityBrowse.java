@@ -29,6 +29,7 @@ public class CityBrowse extends AbstractLookup {
     private RemoveAction citiesRemoveAction;
 
     public void init(Map<String, Object> params) {
+        super.init(params);
         initAfterCommitTableRefreshing();
 
     }
@@ -43,5 +44,6 @@ public class CityBrowse extends AbstractLookup {
             }
         });
     }
+
 
 }

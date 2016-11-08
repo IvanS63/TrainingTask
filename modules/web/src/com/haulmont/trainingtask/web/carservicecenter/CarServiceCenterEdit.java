@@ -38,8 +38,10 @@ public class CarServiceCenterEdit extends AbstractEditor<CarServiceCenter> {
     @Inject
     private CollectionDatasource<Customer, UUID> customersDs;
 
+
     @Override
     public void init(Map<String, Object> params) {
+        super.init(params);
         setItem(WindowParams.ITEM.getEntity(params));
         initDefaultCity();
         setCustomersTableParams();
